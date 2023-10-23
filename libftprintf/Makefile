@@ -5,43 +5,57 @@
 #                                                     +:+ +:+         +:+      #
 #    By: aulicna <aulicna@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/10/23 13:48:36 by aulicna           #+#    #+#              #
-#    Updated: 2023/10/23 14:30:14 by aulicna          ###   ########.fr        #
+#    Created: 2023/02/04 12:42:49 by aulicna           #+#    #+#              #
+#    Updated: 2023/05/01 17:16:26 by aulicna          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = fractol
+NAME = libftprintf.a
 
-SRC = fractol.c
+SRC = 	ft_printf.c \
+	format_char.c \
+	format_str.c \
+	format_dec_int.c \
+	format_dec_int_2.c \
+	format_unsigned.c \
+	format_unsigned_2.c \
+	format_hex.c \
+	format_hex_zero.c \
+	format_pointer_hex.c \
+	format_decision.c \
+	process_flags.c \
+	count_digits.c \
+	loop_print.c
+
 OBJ = $(SRC:.c=.o)
 
-LIBFTPRINTF = libftprintf
-LIBFT = libftprintf/libft
-MLX = minilibx
+LIBFT = libft
 
 CFLAGS = -Wall -Werror -Wextra
 
 GCC = gcc
 
-all: libs $(NAME)
+AR = ar rc
 
-libs:
-	@make -C $(LIBFTPRINTF)
-	@echo "libprintf library ready ✅"
-	@make -C $(MLX)
-	@echo "minilibx library ready ✅"
-	
-$(NAME): $(OBJ)
-		$(GCC) $(CFLAGS) -L $(LIBFT) -L $(LIBFTPRINTF) -L $(MLX) -o $@ $^ -lft -lftprintf -lmlx -lXext -lX11 -lm
+all: $(NAME)
+
+bonus: all
+
+${NAME}: $(OBJ)
+	make -C $(LIBFT) bonus
+	cp libft/libft.a ./
+	mv libft.a $(NAME)
+	$(AR) $(NAME) $(OBJ)
+
+.c.o:
+	$(GCC) $(CFLAGS) -c $< -o $@
 
 clean:
-	@make clean -C $(PRINTF)
+	make clean -C $(LIBFT)
 	@rm -f $(OBJ)
 
-fclean:
-	@rm -f $(OBJ)
+fclean: clean
+	make fclean -C $(LIBFT)
 	@rm -f $(NAME)
-	@make fclean -C $(PRINTF)
-	
-	.PHONY: all clean fclean re
 
+.PHONY: all clean fclean re
