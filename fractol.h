@@ -6,7 +6,7 @@
 /*   By: aulicna <aulicna@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 11:53:07 by aulicna           #+#    #+#             */
-/*   Updated: 2023/10/24 11:37:17 by aulicna          ###   ########.fr       */
+/*   Updated: 2023/10/24 14:42:15 by aulicna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,6 @@ void	no_invalid_parameter(void);
 char	get_set(int argc, char **argv);
 
 // draw.c
-void	draw_mandelbrot(t_data *img, void *mlx);
-
+void	draw_mandelbrot(t_data *img, t_fractol *fractol);
 
 #endif

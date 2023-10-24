@@ -6,7 +6,7 @@
 /*   By: aulicna <aulicna@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 10:39:16 by aulicna           #+#    #+#             */
-/*   Updated: 2023/10/24 11:55:16 by aulicna          ###   ########.fr       */
+/*   Updated: 2023/10/24 14:42:02 by aulicna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	fractol(char set)
 		while (fractol.y <= WIN_HEIGHT)
 		{
 			if (fractol.set == 'M')
-				draw_mandelbrot(&fractol.img, fractol.mlx);
+				draw_mandelbrot(&fractol.img, &fractol);
 			fractol.y++;
 		}
 				fractol.x++;
