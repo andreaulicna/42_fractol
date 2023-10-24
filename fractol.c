@@ -6,7 +6,7 @@
 /*   By: aulicna <aulicna@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 10:39:16 by aulicna           #+#    #+#             */
-/*   Updated: 2023/10/24 14:42:02 by aulicna          ###   ########.fr       */
+/*   Updated: 2023/10/24 21:34:15 by aulicna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,16 @@ void	init_fractol(t_fractol *fractol, char set)
 	fractol->set = set;
 	fractol->mlx = mlx_init();
 	fractol->mlx_window = mlx_new_window(fractol->mlx, WIN_WIDTH, WIN_HEIGHT, "Fractol");
-	fractol->x = 0;
+	fractol->x = 50;
 	fractol->y = 0;
 }
-
 
 int	fractol(char set)
 {
 	t_fractol	fractol;
 
 	init_fractol(&fractol, set);
-	while(fractol.x <= WIN_WIDTH)
+	while (fractol.x <= WIN_WIDTH)
 	{
 		while (fractol.y <= WIN_HEIGHT)
 		{
@@ -35,10 +34,10 @@ int	fractol(char set)
 				draw_mandelbrot(&fractol.img, &fractol);
 			fractol.y++;
 		}
-				fractol.x++;
+		fractol.x++;
 	}
 	mlx_put_image_to_window(fractol.mlx, fractol.mlx_window,
-			fractol.img.img_ptr, 0, 0);
+		fractol.img.img_ptr, 0, 0);
 	mlx_loop(fractol.mlx);
 	return (0);
 }

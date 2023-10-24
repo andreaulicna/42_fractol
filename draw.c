@@ -6,7 +6,7 @@
 /*   By: aulicna <aulicna@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 08:57:50 by aulicna           #+#    #+#             */
-/*   Updated: 2023/10/24 14:42:44 by aulicna          ###   ########.fr       */
+/*   Updated: 2023/10/24 21:18:15 by aulicna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ void	draw_mandelbrot(t_data *img, t_fractol *fractol)
 // double x;
 // double y;
 // double x_tmp;
-
 	img->img_ptr = mlx_new_image(fractol->mlx, WIN_WIDTH, WIN_HEIGHT);
 	img->addr = mlx_get_data_addr(img->img_ptr, &img->bits_per_pixel,
 			&img->size_line, &img->endian);
@@ -44,5 +43,11 @@ void	draw_mandelbrot(t_data *img, t_fractol *fractol)
 //	 my_mlx_pixel_put(img, x, y, 0x000000);
 // else
 //	 my_mlx_pixel_put(img, x, y, 0x00FF0000 * (i % 255));
- my_mlx_pixel_put(img, 250, 250, 0xFF0000);
+	int	i = fractol->x;
+	while (i < 100)
+	{
+		ft_printf("x: %d\n", fractol->x);
+		my_mlx_pixel_put(img, fractol->x + i, 250, 0xFF0000 * i);
+		i++;
+	}
 }

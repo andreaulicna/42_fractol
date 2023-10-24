@@ -6,7 +6,7 @@
 /*   By: aulicna <aulicna@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 11:53:07 by aulicna           #+#    #+#             */
-/*   Updated: 2023/10/24 14:42:15 by aulicna          ###   ########.fr       */
+/*   Updated: 2023/10/24 21:08:31 by aulicna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,17 @@
 # include <stdlib.h>
 # include <float.h>
 
-# define WIN_WIDTH 1080
+# define WIN_WIDTH 500
 # define WIN_HEIGHT 500
 # define MAX_ITERATIONS 500
 
 typedef struct s_data
 {
  void *img_ptr;
- void *addr;
- int bits_per_pixel;
- int size_line;
- int endian;
+ void  *addr;
+ int  bits_per_pixel;
+ int  size_line;
+ int  endian;
 }             t_data;
 
 typedef struct s_fractol
