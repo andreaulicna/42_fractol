@@ -6,7 +6,7 @@
 /*   By: aulicna <aulicna@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 10:39:16 by aulicna           #+#    #+#             */
-/*   Updated: 2023/10/24 22:38:53 by aulicna          ###   ########.fr       */
+/*   Updated: 2023/10/25 14:07:12 by aulicna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,11 @@ void	init_fractol(t_fractol *fractol, char set)
 	fractol->mlx_window = mlx_new_window(fractol->mlx, WIN_WIDTH, WIN_HEIGHT, "Fractol");
 	fractol->x = 0;
 	fractol->y = 0;
+	fractol->zx = 0.;
+	fractol->zy = 0.;
+	fractol->offset_x = -2.25;
+	fractol->offset_y = -1.5;
+	fractol->zoom = 200;
 }
 
 int	fractol(char set)

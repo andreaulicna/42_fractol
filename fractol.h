@@ -6,7 +6,7 @@
 /*   By: aulicna <aulicna@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 11:53:07 by aulicna           #+#    #+#             */
-/*   Updated: 2023/10/24 21:08:31 by aulicna          ###   ########.fr       */
+/*   Updated: 2023/10/25 14:02:37 by aulicna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,11 @@
 # include "libftprintf/ft_printf.h"
 # include <stdlib.h>
 # include <float.h>
+# include <stdio.h> //remove
 
-# define WIN_WIDTH 500
-# define WIN_HEIGHT 500
-# define MAX_ITERATIONS 500
+# define WIN_WIDTH 800
+# define WIN_HEIGHT 600
+# define MAX_ITERATIONS 300
 
 typedef struct s_data
 {
@@ -39,6 +40,13 @@ typedef struct s_fractol
  t_data img;
  int x;
  int y;
+ double zy;
+ double zx;
+ double cy;
+ double cx;
+ double zoom;
+ double offset_x;
+ double offset_y;
 }             t_fractol;
 
 // input.c
