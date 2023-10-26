@@ -6,7 +6,7 @@
 /*   By: aulicna <aulicna@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 08:57:50 by aulicna           #+#    #+#             */
-/*   Updated: 2023/10/26 12:35:04 by aulicna          ###   ########.fr       */
+/*   Updated: 2023/10/26 16:14:29 by aulicna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,8 @@ void	calculate_mandelbrot(t_data *img, t_fractol *fractol)
 
 	i = 0;
 	set_cx_cy(fractol);
+	fractol->zx = 0.;
+	fractol->zy = 0.;
 	while (fractol->zx * fractol->zx + fractol->zy * fractol->zy < __DBL_MAX__
 		&& i < MAX_ITERATIONS)
 	{

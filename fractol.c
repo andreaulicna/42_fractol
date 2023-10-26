@@ -6,7 +6,7 @@
 /*   By: aulicna <aulicna@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 10:39:16 by aulicna           #+#    #+#             */
-/*   Updated: 2023/10/26 14:20:05 by aulicna          ###   ########.fr       */
+/*   Updated: 2023/10/26 16:27:39 by aulicna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ int	fractol(char set)
 {
 	t_fractol	fractol;
 
-	init_fractol(&fractol, set);
+	fractol.set = set;
+	init_fractol(&fractol);
 	init_mlx(&fractol);
 	init_img(&fractol, &fractol.img);
 	draw_fractal(&fractol.img, &fractol);

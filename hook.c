@@ -6,7 +6,7 @@
 /*   By: aulicna <aulicna@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 12:22:56 by aulicna           #+#    #+#             */
-/*   Updated: 2023/10/26 14:45:27 by aulicna          ###   ########.fr       */
+/*   Updated: 2023/10/26 16:27:05 by aulicna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,20 @@
 int	key_hook(int key, t_fractol *fractol)
 {
 	if (key == ESC)
-		exit_fractol(fractol);
- else if (key == RIGHT)
-  fractol->offset_x += MOVE / fractol->zoom;
- else if (key == LEFT)
-  fractol->offset_x -= MOVE / fractol->zoom;
- else if (key == UP)
-  fractol->offset_y -= MOVE / fractol->zoom;
- else if (key == DOWN)
-  fractol->offset_y += MOVE / fractol->zoom;
- draw_fractal(&fractol->img, fractol);
- mlx_destroy_image(fractol->mlx, fractol->img.img_ptr);
- init_img(fractol, &fractol->img);
+		 exit_fractol(fractol);
+	else if (key == RIGHT)
+	 fractol->offset_x += MOVE / fractol->zoom;
+	else if (key == LEFT)
+	 fractol->offset_x -= MOVE / fractol->zoom;
+	else if (key == UP)
+	 fractol->offset_y -= MOVE / fractol->zoom;
+	else if (key == DOWN)
+	 fractol->offset_y += MOVE / fractol->zoom;
+	else if (key == RESET)
+	 init_fractol(fractol);
+	mlx_destroy_image(fractol->mlx, fractol->img.img_ptr);
+	init_img(fractol, &fractol->img);
+	draw_fractal(&fractol->img, fractol);
 	return (0);
 }
 

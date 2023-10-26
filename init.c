@@ -6,18 +6,17 @@
 /*   By: aulicna <aulicna@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 12:24:26 by aulicna           #+#    #+#             */
-/*   Updated: 2023/10/26 14:19:55 by aulicna          ###   ########.fr       */
+/*   Updated: 2023/10/26 16:14:04 by aulicna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-void	init_fractol(t_fractol *fractol, char set)
+void	init_fractol(t_fractol *fractol)
 {
-	fractol->set = set;
 	fractol->x = 0;
 	fractol->y = 0;
-	fractol->zx = 0.;
+ fractol->zx = 0.;
 	fractol->zy = 0.;
 	fractol->offset_x = -2.25;
 	fractol->offset_y = -1.5;
