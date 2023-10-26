@@ -6,7 +6,7 @@
 /*   By: aulicna <aulicna@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 08:57:50 by aulicna           #+#    #+#             */
-/*   Updated: 2023/10/26 16:14:29 by aulicna          ###   ########.fr       */
+/*   Updated: 2023/10/26 20:45:25 by aulicna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	set_cx_cy(t_fractol *fractol)
 
 void	calculate_mandelbrot(t_data *img, t_fractol *fractol)
 {
-	int	i;
+	int		i;
 	double	x_tmp;
 
 	i = 0;
@@ -44,7 +44,7 @@ void	calculate_mandelbrot(t_data *img, t_fractol *fractol)
 	fractol->zx = 0.;
 	fractol->zy = 0.;
 	while (fractol->zx * fractol->zx + fractol->zy * fractol->zy < __DBL_MAX__
-		&& i < MAX_ITERATIONS)
+		&& i < fractol->max_iter)
 	{
 		x_tmp = fractol->zx * fractol->zx - fractol->zy * fractol->zy
 			+ fractol->cx;
@@ -52,7 +52,7 @@ void	calculate_mandelbrot(t_data *img, t_fractol *fractol)
 		fractol->zx = x_tmp;
 		i++;
 	}
-	if (i == MAX_ITERATIONS)
+	if (i == fractol->max_iter)
 		my_mlx_pixel_put(img, fractol->x, fractol->y, 0x000000);
 	else
 		my_mlx_pixel_put(img, fractol->x, fractol->y, 0xEDEDFF * (i % 255));
