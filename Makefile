@@ -6,7 +6,7 @@
 #    By: aulicna <aulicna@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/23 13:48:36 by aulicna           #+#    #+#              #
-#    Updated: 2023/10/24 09:52:05 by aulicna          ###   ########.fr        #
+#    Updated: 2023/10/26 12:25:12 by aulicna          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,9 @@ NAME = fractol
 
 SRC = fractol.c \
 						input.c \
-						draw.c
+						init.c \
+						draw.c \
+						hook.c
 OBJ = $(SRC:.c=.o)
 
 LIBFTPRINTF = libftprintf

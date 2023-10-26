@@ -6,7 +6,7 @@
 /*   By: aulicna <aulicna@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 08:57:50 by aulicna           #+#    #+#             */
-/*   Updated: 2023/10/26 11:31:03 by aulicna          ###   ########.fr       */
+/*   Updated: 2023/10/26 12:35:04 by aulicna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,4 +75,6 @@ void	draw_fractal(t_data *img, t_fractol *fractol)
 		fractol->x++;
 		fractol->y = 0;
 	}
+	mlx_put_image_to_window(fractol->mlx, fractol->mlx_window,
+		fractol->img.img_ptr, 0, 0);
 }

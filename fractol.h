@@ -6,7 +6,7 @@
 /*   By: aulicna <aulicna@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 11:53:07 by aulicna           #+#    #+#             */
-/*   Updated: 2023/10/26 10:52:51 by aulicna          ###   ########.fr       */
+/*   Updated: 2023/10/26 12:44:27 by aulicna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,12 @@
 # define WIN_WIDTH 800
 # define WIN_HEIGHT 600
 # define MAX_ITERATIONS 300
-# define ESC 27
+# define ESC 65307
+# define RIGHT 65363
+# define LEFT 65361
+# define UP 65362
+# define DOWN 65364
+# define MOVE 15
 
 typedef struct s_data
 {
@@ -54,7 +59,17 @@ typedef struct s_fractol
 void	no_invalid_parameter(void);
 char	get_set(int argc, char **argv);
 
+// init.c
+void	init_fractol(t_fractol *fractol, char set);
+void	init_mlx_img(t_fractol *fractol, t_data *img);
+
 // draw.c
 void	draw_fractal(t_data *img, t_fractol *fractol);
+
+// hook.c
+int	key_hook(int key, t_fractol *fractol);
+
+// fractol.c
+int	exit_fractol(t_fractol *fractol);
 
 #endif
