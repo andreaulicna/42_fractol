@@ -6,7 +6,7 @@
 /*   By: aulicna <aulicna@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 11:53:07 by aulicna           #+#    #+#             */
-/*   Updated: 2023/10/25 14:02:37 by aulicna          ###   ########.fr       */
+/*   Updated: 2023/10/26 10:52:51 by aulicna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 # define WIN_WIDTH 800
 # define WIN_HEIGHT 600
 # define MAX_ITERATIONS 300
+# define ESC 27
 
 typedef struct s_data
 {
@@ -54,6 +55,6 @@ void	no_invalid_parameter(void);
 char	get_set(int argc, char **argv);
 
 // draw.c
-void	draw_mandelbrot(t_data *img, t_fractol *fractol);
+void	draw_fractal(t_data *img, t_fractol *fractol);
 
 #endif

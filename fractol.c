@@ -6,7 +6,7 @@
 /*   By: aulicna <aulicna@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 10:39:16 by aulicna           #+#    #+#             */
-/*   Updated: 2023/10/25 16:34:06 by aulicna          ###   ########.fr       */
+/*   Updated: 2023/10/26 11:49:02 by aulicna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 void	init_fractol(t_fractol *fractol, char set)
 {
 	fractol->set = set;
-	fractol->mlx = mlx_init();
-	fractol->mlx_window = mlx_new_window(fractol->mlx, WIN_WIDTH, WIN_HEIGHT, "Fractol");
 	fractol->x = 0;
 	fractol->y = 0;
 	fractol->zx = 0.;
@@ -26,18 +24,43 @@ void	init_fractol(t_fractol *fractol, char set)
 	fractol->zoom = 200;
 }
 
+void	init_mlx_img(t_fractol *fractol, t_data *img)
+{
+	fractol->mlx = mlx_init();
+	fractol->mlx_window = mlx_new_window(fractol->mlx, WIN_WIDTH, WIN_HEIGHT, "Fractol");
+	img->img_ptr = mlx_new_image(fractol->mlx, WIN_WIDTH, WIN_HEIGHT);
+	img->addr = mlx_get_data_addr(img->img_ptr, &img->bits_per_pixel,
+			&img->size_line, &img->endian);
+}
+
+int	exit_fractol(t_fractol *fractol)
+{
+	mlx_destroy_window(fractol->mlx, fractol->mlx_window);
+	exit(0);
+}
+
+int	key_hook(int key, t_fractol *fractol)
+{
+	if (key == 65307)
+	{
+		printf("hej");
+	 mlx_destroy_window(fractol->mlx, fractol->mlx_window);
+		exit(0);
+	}
+	return (0);
+}
+
 int	fractol(char set)
 {
 	t_fractol	fractol;
 
 	init_fractol(&fractol, set);
-	fractol.img.img_ptr = mlx_new_image(fractol.mlx, WIN_WIDTH, WIN_HEIGHT);
-	fractol.img.addr = mlx_get_data_addr(fractol.img.img_ptr, &fractol.img.bits_per_pixel,
-			&fractol.img.size_line, &fractol.img.endian);
-	if (fractol.set == 'M')
-		draw_mandelbrot(&fractol.img, &fractol);
+	init_mlx_img(&fractol, &fractol.img);
+	draw_fractal(&fractol.img, &fractol);
 	mlx_put_image_to_window(fractol.mlx, fractol.mlx_window,
 		fractol.img.img_ptr, 0, 0);
+	mlx_hook(fractol.mlx_window, 17, 0, exit_fractol, &fractol);
+	mlx_key_hook(fractol.mlx_window, key_hook, &fractol);
 	mlx_loop(fractol.mlx);
 	return (0);
 }

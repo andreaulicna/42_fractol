@@ -6,7 +6,7 @@
 /*   By: aulicna <aulicna@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 08:57:50 by aulicna           #+#    #+#             */
-/*   Updated: 2023/10/25 16:40:21 by aulicna          ###   ########.fr       */
+/*   Updated: 2023/10/26 11:31:03 by aulicna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void	calculate_mandelbrot(t_data *img, t_fractol *fractol)
 
 // This function will eventually be a generic function draw_fractol 
 // and will be using the calculate functions to draw specific fractals
-void	draw_mandelbrot(t_data *img, t_fractol *fractol)
+void	draw_fractal(t_data *img, t_fractol *fractol)
 {
 	fractol->x = 0;
 	while (fractol->x <= WIN_WIDTH)
@@ -68,7 +68,8 @@ void	draw_mandelbrot(t_data *img, t_fractol *fractol)
 		{
 			fractol->zx = 0.;
 			fractol->zy = 0.;
-			calculate_mandelbrot(img, fractol);
+			if (fractol->set == 'M')
+				calculate_mandelbrot(img, fractol);
 			fractol->y++;
 		}
 		fractol->x++;
