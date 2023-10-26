@@ -6,7 +6,7 @@
 /*   By: aulicna <aulicna@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 10:39:16 by aulicna           #+#    #+#             */
-/*   Updated: 2023/10/26 12:36:17 by aulicna          ###   ########.fr       */
+/*   Updated: 2023/10/26 14:20:05 by aulicna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,12 @@ int	fractol(char set)
 	t_fractol	fractol;
 
 	init_fractol(&fractol, set);
-	init_mlx_img(&fractol, &fractol.img);
+	init_mlx(&fractol);
+	init_img(&fractol, &fractol.img);
 	draw_fractal(&fractol.img, &fractol);
 	mlx_hook(fractol.mlx_window, 17, 0, exit_fractol, &fractol);
 	mlx_key_hook(fractol.mlx_window, key_hook, &fractol);
+	mlx_mouse_hook(fractol.mlx_window, mouse_hook, &fractol);
 	mlx_loop(fractol.mlx);
 	return (0);
 }

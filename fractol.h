@@ -6,7 +6,7 @@
 /*   By: aulicna <aulicna@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 11:53:07 by aulicna           #+#    #+#             */
-/*   Updated: 2023/10/26 12:44:27 by aulicna          ###   ########.fr       */
+/*   Updated: 2023/10/26 14:43:48 by aulicna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@
 # define UP 65362
 # define DOWN 65364
 # define MOVE 15
+# define SCRL_UP 4
+# define SCRL_DOWN 5
 
 typedef struct s_data
 {
@@ -61,13 +63,15 @@ char	get_set(int argc, char **argv);
 
 // init.c
 void	init_fractol(t_fractol *fractol, char set);
-void	init_mlx_img(t_fractol *fractol, t_data *img);
+void	init_mlx(t_fractol *fractol);
+void init_img(t_fractol *fractol, t_data *img);
 
 // draw.c
 void	draw_fractal(t_data *img, t_fractol *fractol);
 
 // hook.c
 int	key_hook(int key, t_fractol *fractol);
+int mouse_hook();
 
 // fractol.c
 int	exit_fractol(t_fractol *fractol);

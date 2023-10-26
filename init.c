@@ -6,7 +6,7 @@
 /*   By: aulicna <aulicna@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 12:24:26 by aulicna           #+#    #+#             */
-/*   Updated: 2023/10/26 12:24:43 by aulicna          ###   ########.fr       */
+/*   Updated: 2023/10/26 14:19:55 by aulicna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,14 @@ void	init_fractol(t_fractol *fractol, char set)
 	fractol->zoom = 200;
 }
 
-void	init_mlx_img(t_fractol *fractol, t_data *img)
+void	init_mlx(t_fractol *fractol)
 {
 	fractol->mlx = mlx_init();
 	fractol->mlx_window = mlx_new_window(fractol->mlx, WIN_WIDTH, WIN_HEIGHT, "Fractol");
+}
+
+void init_img(t_fractol *fractol, t_data *img)
+{
 	img->img_ptr = mlx_new_image(fractol->mlx, WIN_WIDTH, WIN_HEIGHT);
 	img->addr = mlx_get_data_addr(img->img_ptr, &img->bits_per_pixel,
 			&img->size_line, &img->endian);
