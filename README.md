@@ -8,3 +8,4 @@ Useful links - Fractol:
 Useful links - setting things up on my laptop:
 - [Run Linux GUI apps on the Windows Subsystem for Linux](https://learn.microsoft.com/en-us/windows/wsl/tutorials/gui-apps)
 - [Increase WSL" memory](https://learn.microsoft.com/en-us/answers/questions/1296124/how-to-increase-memory-and-cpu-limits-for-wsl2-win)
+- [How to Plot the Mandelbrot Set By Hand](https://www.wikihow.com/Plot-the-Mandelbrot-Set-By-Hand)
