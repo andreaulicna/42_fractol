@@ -6,7 +6,7 @@
 /*   By: aulicna <aulicna@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 08:57:50 by aulicna           #+#    #+#             */
-/*   Updated: 2023/10/26 20:45:25 by aulicna          ###   ########.fr       */
+/*   Updated: 2023/10/27 13:47:48 by aulicna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ void	set_cx_cy(t_fractol *fractol)
 void	calculate_mandelbrot(t_data *img, t_fractol *fractol)
 {
 	int		i;
+	int	c;
 	double	x_tmp;
 
 	i = 0;
@@ -53,9 +54,28 @@ void	calculate_mandelbrot(t_data *img, t_fractol *fractol)
 		i++;
 	}
 	if (i == fractol->max_iter)
-		my_mlx_pixel_put(img, fractol->x, fractol->y, 0x000000);
+	{
+		fractol->color = 0x000000;
+	}
 	else
-		my_mlx_pixel_put(img, fractol->x, fractol->y, 0xEDEDFF * (i % 255));
+	{
+		c = i % 16;
+		fractol->color = choose_color(c);
+		//	if (i <= fractol->max_iter / 5)
+		//		fractol->color = color_rgb(0, 7, 100) * (i % 255);
+		//	else if (i <= fractol->max_iter / 5 * 2)
+		//		fractol->color = color_rgb(32, 107, 203) * (i % 255);
+		//	else if (i <= fractol->max_iter / 5 * 3)
+		//		fractol->color = color_rgb(237, 255, 255) * (i % 255);
+		//	else if (i <= fractol->max_iter / 5 * 4)
+		//		fractol->color = color_rgb(255, 1707, 0) * (i % 255);
+		//	else
+		//		fractol->color = color_rgb(0, 2, 0) * (i % 255);
+		//	else
+		//		fractol->color = 0xEDEDFF * (i % 255);
+		//	fractol->color = color_rgb(237, 255, 255) * (i % 255);
+	}
+	my_mlx_pixel_put(img, fractol->x, fractol->y, fractol->color);
 }
 
 // This function will eventually be a generic function draw_fractol 

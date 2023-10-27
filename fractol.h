@@ -6,7 +6,7 @@
 /*   By: aulicna <aulicna@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 11:53:07 by aulicna           #+#    #+#             */
-/*   Updated: 2023/10/26 20:26:22 by aulicna          ###   ########.fr       */
+/*   Updated: 2023/10/27 13:49:20 by aulicna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ typedef struct s_fractol
  double offset_x;
  double offset_y;
  int max_iter;
+ int color;
 }             t_fractol;
 
 // input.c
@@ -79,5 +80,8 @@ int mouse_hook();
 
 // fractol.c
 int	exit_fractol(t_fractol *fractol);
+
+// color.c
+int	choose_color(int c);
 
 #endif
