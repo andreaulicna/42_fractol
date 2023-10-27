@@ -6,30 +6,52 @@
 /*   By: aulicna <aulicna@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 12:22:56 by aulicna           #+#    #+#             */
-/*   Updated: 2023/10/26 20:46:17 by aulicna          ###   ########.fr       */
+/*   Updated: 2023/10/27 17:16:35 by aulicna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
+
+void	change_constants_julia(t_fractol *fractol)
+{
+	if (fractol->cy < 1.5)
+	{
+		fractol->cx += 0.1;
+		fractol->cy += 0.1;
+	}
+	else if (fractol->cy < 1.5)
+	{
+		fractol->cx += 0.1;
+	}
+	else if (fractol->cx < 3)
+	{
+		fractol->cx += 0.1;
+		fractol->cy -= 0.1;
+	}
+}
 
 int	key_hook(int key, t_fractol *fractol)
 {
 	if (key == ESC)
 		exit_fractol(fractol);
 	else if (key == RIGHT)
-		fractol->offset_x += MOVE / fractol->zoom;
+		fractol->offset_x += MOVE_STEP / fractol->zoom;
 	else if (key == LEFT)
-		fractol->offset_x -= MOVE / fractol->zoom;
+		fractol->offset_x -= MOVE_STEP / fractol->zoom;
 	else if (key == UP)
-		fractol->offset_y -= MOVE / fractol->zoom;
+		fractol->offset_y -= MOVE_STEP / fractol->zoom;
 	else if (key == DOWN)
-		fractol->offset_y += MOVE / fractol->zoom;
+		fractol->offset_y += MOVE_STEP / fractol->zoom;
 	else if (key == RESET)
 		init_fractol(fractol);
 	else if (key == ADD_ITER && fractol->max_iter < 3000)
 		fractol->max_iter += ITER_STEP;
 	else if (key == RM_ITER && fractol->max_iter > 25)
 		fractol->max_iter -= ITER_STEP;
+	else if (key == COLOR)
+		fractol->color_change += 0x78370c;
+	else if (key == JULIA && fractol->set == 'J')
+		change_constants_julia(fractol);
 	mlx_destroy_image(fractol->mlx, fractol->img.img_ptr);
 	init_img(fractol, &fractol->img);
 	draw_fractal(&fractol->img, fractol);

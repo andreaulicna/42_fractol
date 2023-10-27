@@ -6,7 +6,7 @@
 /*   By: aulicna <aulicna@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 11:53:07 by aulicna           #+#    #+#             */
-/*   Updated: 2023/10/27 13:49:20 by aulicna          ###   ########.fr       */
+/*   Updated: 2023/10/27 16:45:40 by aulicna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include "libftprintf/ft_printf.h"
 # include <stdlib.h>
 # include <float.h>
+# include <math.h>
 # include <stdio.h> //remove
 
 # define WIN_WIDTH 800
@@ -26,13 +27,15 @@
 # define LEFT 65361
 # define UP 65362
 # define DOWN 65364
-# define MOVE 15
+# define MOVE_STEP 15
 # define SCRL_UP 4
 # define SCRL_DOWN 5
 # define RESET 114 // R
 # define ADD_ITER 119 // W
 # define RM_ITER 115 // S
 # define ITER_STEP 25
+# define COLOR 99 // C
+# define JULIA 106 // J
 
 typedef struct s_data
 {
@@ -60,6 +63,7 @@ typedef struct s_fractol
  double offset_y;
  int max_iter;
  int color;
+ int color_change;
 }             t_fractol;
 
 // input.c
@@ -82,6 +86,6 @@ int mouse_hook();
 int	exit_fractol(t_fractol *fractol);
 
 // color.c
-int	choose_color(int c);
+int	choose_color_mandelbrot(int c);
 
 #endif

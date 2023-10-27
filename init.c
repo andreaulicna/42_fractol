@@ -6,7 +6,7 @@
 /*   By: aulicna <aulicna@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 12:24:26 by aulicna           #+#    #+#             */
-/*   Updated: 2023/10/26 20:44:16 by aulicna          ###   ########.fr       */
+/*   Updated: 2023/10/27 17:01:32 by aulicna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,16 @@ void	init_fractol(t_fractol *fractol)
 {
 	fractol->x = 0;
 	fractol->y = 0;
-	fractol->zx = 0.;
-	fractol->zy = 0.;
-	fractol->offset_x = -2.25;
+	if (fractol->set == 'J')
+		fractol->offset_x = -1.95;
+	else
+		fractol->offset_x = -2.25;
 	fractol->offset_y = -1.5;
 	fractol->zoom = 200;
 	fractol->max_iter = 100;
+	fractol->color_change = 0;
+	fractol->cx = 0;
+	fractol->cy = 0;
 }
 
 void	init_mlx(t_fractol *fractol)
