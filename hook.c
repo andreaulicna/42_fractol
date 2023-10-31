@@ -6,20 +6,22 @@
 /*   By: aulicna <aulicna@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 12:22:56 by aulicna           #+#    #+#             */
-/*   Updated: 2023/10/31 13:59:22 by aulicna          ###   ########.fr       */
+/*   Updated: 2023/10/31 16:07:39 by aulicna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-void	change_constants_julia(t_fractol *fractol)
+static void	change_constants_julia(int key, t_fractol *fractol)
 {
-	double	angle;
-
-	angle = 2.0 * M_PI * fractol->t;
-	fractol->cx = cos(angle) * 0.745429;
-	fractol->cy = sin(angle) * 0.745429;
-	fractol->t += 0.01;
+	if (key == A)
+		fractol->cy += 0.1;
+	else if (key == D)
+		fractol->cy -= 0.1;
+	else if (key == W)
+		fractol->cx += 0.1;
+	else if (key == S)
+		fractol->cx -= 0.1;
 }
 
 int	key_hook(int key, t_fractol *fractol)
@@ -42,8 +44,9 @@ int	key_hook(int key, t_fractol *fractol)
 		fractol->max_iter -= ITER_STEP;
 	else if (key == COLOR)
 		fractol->color_change += 0x78370c;
-	else if (key == JULIA && fractol->set == 'J')
-		change_constants_julia(fractol);
+	else if ((key == W || key == S || key == A || key == D)
+		&& fractol->set == 'J')
+		change_constants_julia(key, fractol);
 	redraw(fractol);
 	return (0);
 }

@@ -6,13 +6,32 @@
 /*   By: aulicna <aulicna@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 13:12:34 by aulicna           #+#    #+#             */
-/*   Updated: 2023/10/31 13:46:26 by aulicna          ###   ########.fr       */
+/*   Updated: 2023/10/31 16:14:21 by aulicna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-void	set_z_c(t_fractol *fractol)
+static void	set_c_julia(t_fractol *fractol)
+{
+	if (fractol->julia_num == '1')
+	{
+		fractol->cx = -0.745429;
+		fractol->cy = 0.05;
+	}
+	else if (fractol->julia_num == '2')
+	{
+		fractol->cx = 0.285;
+		fractol->cy = 0.01;
+	}
+	else if (fractol->julia_num == '3')
+	{
+		fractol->cx = -0.745429;
+		fractol->cy = 0.2;
+	}
+}
+
+static void	set_z_c(t_fractol *fractol)
 {
 	if (fractol->set == 'M' || fractol->set == 'B')
 	{
@@ -26,10 +45,7 @@ void	set_z_c(t_fractol *fractol)
 		fractol->zx = fractol->x / fractol->zoom + fractol->offset_x;
 		fractol->zy = fractol->y / fractol->zoom + fractol->offset_y;
 		if (fractol->cx == 0 && fractol->cy == 0)
-		{
-			fractol->cx = -0.745429;
-			fractol->cy = 0.05;
-		}
+			set_c_julia(fractol);
 	}
 }
 

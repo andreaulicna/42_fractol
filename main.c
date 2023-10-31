@@ -1,22 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fractol.c                                          :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aulicna <aulicna@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 10:39:16 by aulicna           #+#    #+#             */
-/*   Updated: 2023/10/31 12:49:56 by aulicna          ###   ########.fr       */
+/*   Updated: 2023/10/31 16:16:56 by aulicna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
-
-int	exit_fractol(t_fractol *fractol)
-{
-	mlx_destroy_window(fractol->mlx, fractol->mlx_window);
-	exit(0);
-}
 
 int	main(int argc, char **argv)
 {

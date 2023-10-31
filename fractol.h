@@ -6,7 +6,7 @@
 /*   By: aulicna <aulicna@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 11:53:07 by aulicna           #+#    #+#             */
-/*   Updated: 2023/10/31 13:54:54 by aulicna          ###   ########.fr       */
+/*   Updated: 2023/10/31 16:16:29 by aulicna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,14 @@
 # define SCRL_UP 4
 # define SCRL_DOWN 5
 # define RESET 114 // R
-# define ADD_ITER 119 // W
-# define RM_ITER 115 // S
+# define ADD_ITER 105 // I
+# define RM_ITER 107 // K
 # define ITER_STEP 25
 # define COLOR 99 // C
+# define W 119
+# define S 115
+# define A 97
+# define D 100
 # define JULIA 106 // J
 
 typedef struct s_data
@@ -63,7 +67,8 @@ typedef struct s_fractol
 	int		max_iter;
 	int		color;
 	int		color_change;
-	double	t;
+	double	transition;
+	char	julia_num;
 }	t_fractol;
 
 // input.c
@@ -74,6 +79,7 @@ int		get_set(int argc, char **argv, t_fractol *fractol);
 void	init_fractol(t_fractol *fractol);
 void	init_mlx(t_fractol *fractol);
 void	init_img(t_fractol *fractol, t_data *img);
+int		exit_fractol(t_fractol *fractol);
 
 // calculate.c
 void	calculate_mandelbrot(t_fractol *fractol);
@@ -87,9 +93,6 @@ int		redraw(t_fractol *fractol);
 // hook.c
 int		key_hook(int key, t_fractol *fractol);
 int		mouse_hook(int mouse_key, int x, int y, t_fractol *fractol);
-
-// fractol.c
-int		exit_fractol(t_fractol *fractol);
 
 // color.c
 int		color_mandelbrot(int c);
