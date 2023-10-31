@@ -6,15 +6,16 @@
 #    By: aulicna <aulicna@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/23 13:48:36 by aulicna           #+#    #+#              #
-#    Updated: 2023/10/27 12:53:59 by aulicna          ###   ########.fr        #
+#    Updated: 2023/10/31 13:18:01 by aulicna          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = fractol
 
-SRC = fractol.c \
+SRC = main.c \
 						input.c \
 						init.c \
+						calculate.c \
 						draw.c \
 						hook.c \
 						color.c

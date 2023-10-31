@@ -6,7 +6,7 @@
 /*   By: aulicna <aulicna@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 12:24:26 by aulicna           #+#    #+#             */
-/*   Updated: 2023/10/27 17:01:32 by aulicna          ###   ########.fr       */
+/*   Updated: 2023/10/31 13:44:13 by aulicna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,21 @@ void	init_fractol(t_fractol *fractol)
 	fractol->color_change = 0;
 	fractol->cx = 0;
 	fractol->cy = 0;
+	fractol->t = 0.5;
 }
 
 void	init_mlx(t_fractol *fractol)
 {
 	fractol->mlx = mlx_init();
-	fractol->mlx_window = mlx_new_window(fractol->mlx,
-			WIN_WIDTH, WIN_HEIGHT, "Fractol");
+	if (fractol->set == 'M')
+		fractol->mlx_window = mlx_new_window(fractol->mlx,
+				WIN_WIDTH, WIN_HEIGHT, "Mandelbrot Fractal");
+	else if (fractol->set == 'J')
+		fractol->mlx_window = mlx_new_window(fractol->mlx,
+				WIN_WIDTH, WIN_HEIGHT, "Julia Fractal");
+	else
+		fractol->mlx_window = mlx_new_window(fractol->mlx,
+				WIN_WIDTH, WIN_HEIGHT, "Burning Ship Fractal");
 }
 
 void	init_img(t_fractol *fractol, t_data *img)
