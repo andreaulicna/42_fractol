@@ -6,7 +6,7 @@
 /*   By: aulicna <aulicna@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 11:53:07 by aulicna           #+#    #+#             */
-/*   Updated: 2023/10/31 16:16:29 by aulicna          ###   ########.fr       */
+/*   Updated: 2023/11/07 05:47:43 by aulicna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ typedef struct s_fractol
 }	t_fractol;
 
 // input.c
-int		no_invalid_parameter(void);
+int		no_invalid_argument(void);
 int		get_set(int argc, char **argv, t_fractol *fractol);
 
 // init.c

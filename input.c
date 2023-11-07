@@ -6,13 +6,13 @@
 /*   By: aulicna <aulicna@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 08:57:46 by aulicna           #+#    #+#             */
-/*   Updated: 2023/10/31 15:50:33 by aulicna          ###   ########.fr       */
+/*   Updated: 2023/11/07 05:47:53 by aulicna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-int	no_invalid_parameter(void)
+int	no_invalid_argument(void)
 {
 	ft_printf("\nNo or invalid parameter(s) were provided :(\n");
 	ft_printf("\n***Valid arguments***\n\n");
@@ -49,5 +49,5 @@ int	get_set(int argc, char **argv, t_fractol *fractol)
 			return (0);
 		}
 	}	
-	return (no_invalid_parameter());
+	return (no_invalid_argument());
 }
