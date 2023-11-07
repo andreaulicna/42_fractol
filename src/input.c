@@ -6,11 +6,11 @@
 /*   By: aulicna <aulicna@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 08:57:46 by aulicna           #+#    #+#             */
-/*   Updated: 2023/11/07 05:47:53 by aulicna          ###   ########.fr       */
+/*   Updated: 2023/11/07 07:58:07 by aulicna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "../incl/fractol.h"
 
 int	no_invalid_argument(void)
 {

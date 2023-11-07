@@ -6,15 +6,15 @@
 /*   By: aulicna <aulicna@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 11:53:07 by aulicna           #+#    #+#             */
-/*   Updated: 2023/11/07 05:47:43 by aulicna          ###   ########.fr       */
+/*   Updated: 2023/11/07 07:59:07 by aulicna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FRACTOL_H
 # define FRACTOL_H
 
-# include "minilibx/mlx.h"
-# include "libftprintf/ft_printf.h"
+# include "../minilibx/mlx.h"
+# include "../libftprintf/ft_printf.h"
 # include <stdlib.h>
 # include <float.h>
 # include <math.h>

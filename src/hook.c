@@ -6,11 +6,11 @@
 /*   By: aulicna <aulicna@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 12:22:56 by aulicna           #+#    #+#             */
-/*   Updated: 2023/10/31 16:07:39 by aulicna          ###   ########.fr       */
+/*   Updated: 2023/11/07 07:57:39 by aulicna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "../incl/fractol.h"
 
 static void	change_constants_julia(int key, t_fractol *fractol)
 {

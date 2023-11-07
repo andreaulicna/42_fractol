@@ -6,11 +6,11 @@
 /*   By: aulicna <aulicna@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 12:36:53 by aulicna           #+#    #+#             */
-/*   Updated: 2023/10/31 13:57:37 by aulicna          ###   ########.fr       */
+/*   Updated: 2023/11/07 07:57:27 by aulicna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "../incl/fractol.h"
 
 int	color_julia(int i)
 {

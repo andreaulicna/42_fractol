@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   calculate.c                                        :+:      :+:    :+:   */
+/*   calculate_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aulicna <aulicna@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 13:12:34 by aulicna           #+#    #+#             */
-/*   Updated: 2023/10/31 16:14:21 by aulicna          ###   ########.fr       */
+/*   Updated: 2023/11/07 08:14:09 by aulicna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "../incl/fractol_bonus.h"
 
 static void	set_c_julia(t_fractol *fractol)
 {

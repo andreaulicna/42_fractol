@@ -6,11 +6,11 @@
 /*   By: aulicna <aulicna@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 08:57:50 by aulicna           #+#    #+#             */
-/*   Updated: 2023/10/31 16:07:51 by aulicna          ###   ########.fr       */
+/*   Updated: 2023/11/07 07:59:23 by aulicna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "../incl/fractol.h"
 
 static void	my_mlx_pixel_put(t_data *img, int x, int y, int color)
 {
