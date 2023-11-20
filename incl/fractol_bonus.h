@@ -6,7 +6,7 @@
 /*   By: aulicna <aulicna@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 11:53:07 by aulicna           #+#    #+#             */
-/*   Updated: 2023/11/07 08:02:46 by aulicna          ###   ########.fr       */
+/*   Updated: 2023/11/20 13:03:34 by aulicna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 # include "../minilibx/mlx.h"
 # include "../libftprintf/ft_printf.h"
 # include <stdlib.h>
-# include <float.h>
 # include <math.h>
 
 # define WIN_WIDTH 800

@@ -6,7 +6,7 @@
 /*   By: aulicna <aulicna@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 08:57:46 by aulicna           #+#    #+#             */
-/*   Updated: 2023/11/07 07:58:07 by aulicna          ###   ########.fr       */
+/*   Updated: 2023/11/20 12:58:20 by aulicna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,6 @@ int	get_set(int argc, char **argv, t_fractol *fractol)
 			fractol->julia_num = argv[1][1];
 			return (0);
 		}
-	}	
+	}
 	return (no_invalid_argument());
 }
